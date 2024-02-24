@@ -7,8 +7,8 @@ const City = () => {
   return (
     <div>
       <div className="container  w-50 mt-3 d-flex justify-content-center align-items-center  flex-column">
-        <h2 style={{ fontWeight: 400, fontSize: 38 }}>
-          Popular locations in <ReactCountryFlag countryCode="IN" svg style={{ borderRadius:14 ,width:60}}/><span style={{ fontWeight: 500 }}> India</span>
+        <h2 className="locn" style={{ fontWeight: 400, fontSize: 35, width:500 }}>
+          Popular locations in <ReactCountryFlag countryCode="IN" svg style={{ borderRadius:14 ,width:60}}/> <label style={{fontWeight:500}}> India</label>
         </h2>
         <br />
         <p style={{ textAlign: "center", fontSize: 18, color: "gray" }}>

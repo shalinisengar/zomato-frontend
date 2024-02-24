@@ -57,11 +57,15 @@ const Footer = () => {
             <p className="m-1"style={{color: "gray"}}>Sitemap</p>
           </div>
           <div>
-            <h6>SOCIAL LINKS</h6><a className="a1"><RiInstagramFill/></a>
+            
+            <h6>SOCIAL LINKS</h6>
+            <div className="icon">
+            <a className="a"><RiInstagramFill/></a>
              <a className="a"><FaLinkedin /> </a>
              <a className="a"><FaTwitter /></a>
             <a className="a"><GrYoutube /></a>
             <a className="a"><FaFacebookSquare /></a><br/>
+            </div>
             <img className="mt-4" style={{width:150 ,height:45}} src={img}/><br/>
             {/* <img className="mt-3" style={{width:150 ,height:55}} src={img1}/> */}
 

@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import { Link, NavLink } from 'react-router-dom'
 import {FaUserAlt}  from 'react-icons/fa';
-import { IoFastFood } from "react-icons/io5";
+// import { IoFastFood } from "react-icons/io5";
 // import { IoSearch } from "react-icons/io5";
 import {BiLogInCircle}  from 'react-icons/bi';
 import Logo from './Zomato-Logo.png'
@@ -41,8 +41,8 @@ const Home = () => {
         <div className='input-search'>
             <h3 style={{fontWeight:395}}>Discover the best foods & drinks in Chitkara</h3>
             <br/>
-            <div className='input'>
-              <select name='' id='' ><img src=''/>
+            <div className='inp'>
+              <select name='' id='select' ><img src=''/>
 
                 <option value="channai">Chennai</option>
                 <option value="bhopal">Bhopal</option>
@@ -55,7 +55,7 @@ const Home = () => {
               style={{backgroundColor:'white', color:'black',  borderRadius: 10,width:20, height: 50}} /> */}
               {/* <div className='search1'>
               <IoSearch /></div> */}
-              <input className='p-3' type='text' placeholder=' Search for a restaurant or a dish'/>
+              <input className='p-3 hm' type='text'  placeholder=' Search for a restaurant or a dish'/>
 
             </div>
 

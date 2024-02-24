@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 import './signup.css'
-// import axios from 'axios'
-// import { Route, Routes,useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { Route, Routes,useNavigate } from 'react-router-dom'
 
 const Signup = () => {
+  let navigate = useNavigate()
+
   // let navigate= useNavigate()
   let [input, Setinput] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     passWord: ''
   })
@@ -16,20 +17,12 @@ const Signup = () => {
       e.preventDefault();
       
 
-      // let res = await axios.post('http://localhost:4000/signup',input)
-      // navigate('/login')
-              
-      console.log(input);
-      // fetch('http://localhost:4000/signup',{
-      //   method:'POST',
-      //   headers:{
-      //     'Content-Type':'application/json',
-      //   },
-      //   body:JSON.stringify(input)
-      // }).then()
+      let res = await axios.post('http://localhost:4000/api/users',input)
+      navigate('/login')
+      console.log(res);
 
-
-        // console.log(input, 'sss')
+      // console.log(input);
+      
   }
   const fun2 = (e) => {
     let { name, value } = e.target
@@ -38,14 +31,11 @@ const Signup = () => {
   return (
     <div id='main'>
       <fieldset>
-        <legend><h2>SignUp form</h2></legend>
-      <span> FirstName </span>
-      <input value={input.firstName}  name='firstName' type='text' placeholder="Enter your firstName" onChange={fun2} />
-      <br></br> 
-      <br></br> 
+        <legend ><h2>SignUp form</h2></legend>
+      
 
-      <span> LastName </span>
-      <input value={input.lastName} name='lastName' type='text' placeholder="Enter your LastName" onChange={fun2} />
+      <span> FulltName </span>
+      <input value={input.fullName} name='fullName' type='text' placeholder="Enter your fullName" onChange={fun2} />
       <br></br>
       <br></br>
 
@@ -59,7 +49,7 @@ const Signup = () => {
       <br></br>
       <br></br>
 
-      <button type='submit' onClick={fun3}>Submit</button>  
+      <button id='botton' type='submit' onClick={fun3}>Submit</button>  
           <Link to='/login'>Login</Link>
 
       </fieldset>

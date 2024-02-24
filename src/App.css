@@ -42,7 +42,7 @@
 .zomato-logo{
   position: absolute;
   top: 35%;
-  margin: -2% 49%;
+  margin: -1% 49%;
   /* width: 150px; */
   /* height: 100px; */
   transform: translate(-50%,-50%);
@@ -50,11 +50,14 @@
 
 
 }
+inp{
+  margin: 0%;
+}
 .zomato-logo img{
   width: 330px;
   height: 50px;
   gap: 50px;
-  margin: 50px;
+  margin: 40px;
   
 }
 .input-search{
@@ -63,14 +66,14 @@
   top: 38%;
   margin: 0% 28%;
 }
-.input input{
-  width: 390px;
+.inp .hm{
+  width: 400px;
   text-align: start;
   height: 50px;
   /* border: rgb(90, 40, 40) solid 2px; */
   border-radius: 10px;
 }
-.input select {
+.inp select {
   width: 180px;
   text-align: center;
   height: 50px;
@@ -127,9 +130,10 @@
     padding: 20px;
     border-radius: 20px;
     position: relative;
-    background-color: #1a1a1a;
+    background-color: #1a0537;
     color: #fff;
     border: 1px solid #333;
+    box-shadow: 20px 20px black;
     margin: 100px auto;
   }
   
@@ -379,10 +383,10 @@
   .a{
     color: #000;
     margin: 4px;
+    
   }
-  .a1{
-    color: #000;
-    margin-right: 4px;
-  }
+ .icon{
+  display: flex;
+ }
   
   

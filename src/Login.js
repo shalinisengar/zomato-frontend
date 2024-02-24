@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+// import axios from 'axios'
+import { Route, Routes,useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  let navigate = useNavigate()
+
   let [input ,setinput] = useState({
     email:"",
     password:""
   })
 
-  const click = (e)=>{
+  const click = async(e)=>{
     e.preventDefault();
-    console.log(input);
+    // let res = await axios.post('http://localhost:4000/api/login',input)
+    navigate('/home')
+    // console.log(res);
   }
   const changeinput = (e) => {
     let { name, value } = e.target
@@ -21,14 +27,16 @@ const Login = () => {
      <div className='container'>
     
      <form class="form"> 
-       <p class="form-title">Sign in to your account</p>
+       <h4 class="form-title">Sign in to your account</h4>
         <div class="input-container">
-          <input type="email" placeholder="Enter email" name='email'value={input.email} onChange={changeinput}/>
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" name='email'value={input.email} onChange={changeinput}/>
           <span>
           </span>
       </div>
       <div class="input-container">
-          <input type="password" placeholder="Enter password" value={input.password} name='password' onChange={changeinput}/>
+        <label>Password</label>
+          <input type="password" placeholder="Enter your password" value={input.password} name='password' onChange={changeinput}/>
         </div>
          <button type="submit"  onClick={click} >
         Sign in

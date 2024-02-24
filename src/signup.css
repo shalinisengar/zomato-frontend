@@ -1,5 +1,5 @@
 #main {
-    margin: auto;
+    margin: 50px auto;
     width: 50%;
     /* padding: 20px; */
   }
@@ -7,11 +7,14 @@
   fieldset {
     border: 2px solid #575454;
     padding: 20px;
+    border-radius: 20px;
   }
   
   legend {
+    text-align: center;
     font-size: 22px;
     font-weight: bold;
+    
     /* margin-bottom: 20px; */
   }
   
@@ -23,12 +26,15 @@
   input[type="text"],
   input[type="email"],
   input[type="password"] {
-    width: 96%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
   }
   
-  button {
+  .locn{
+    width: 1000px;
+  }
+  #botton {
     background-color: #7249b0;
     color: rgb(255, 255, 255);
     padding: 15px 20px;
