@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import axios from 'axios'
+import axios from 'axios'
 import { Route, Routes,useNavigate } from 'react-router-dom'
 
 const Login = () => {
@@ -13,9 +13,9 @@ const Login = () => {
 
   const click = async(e)=>{
     e.preventDefault();
-    // let res = await axios.post('http://localhost:4000/api/login',input)
+    let res = await axios.post('http://localhost:4000/api/login',input)
     navigate('/home')
-    // console.log(res);
+    console.log(res);
   }
   const changeinput = (e) => {
     let { name, value } = e.target
