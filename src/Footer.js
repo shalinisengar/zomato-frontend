@@ -6,7 +6,8 @@ import { FaTwitter } from "react-icons/fa";
 import { GrYoutube } from "react-icons/gr";
 import ReactCountryFlag from "react-country-flag"
 import img from './images.png'
-// import img1 from './images1.jpg'
+// import img from './images.jpng'
+// import img1 from './images1.png'
 import { TbWorld } from "react-icons/tb";
 
 
@@ -66,8 +67,8 @@ const Footer = () => {
             <a className="a"><GrYoutube /></a>
             <a className="a"><FaFacebookSquare /></a><br/>
             </div>
-            <img className="mt-4" style={{width:150 ,height:45}} src={img}/><br/>
-            {/* <img className="mt-3" style={{width:150 ,height:55}} src={img1}/> */}
+            <img className="mt-3 " style={{width:140 ,height:90}} src={img}/><br/>
+            {/* <img className="mt-2 " style={{width:165 ,height:60}} src={img1}/> */}
 
           </div>
         </div>
