@@ -8,7 +8,7 @@ const Signup = () => {
   let navigate = useNavigate()
 
  let [input, Setinput] = useState({
-    fullName: '',
+    name: '',
     email: '',
     passWord: ''
   })
@@ -17,7 +17,10 @@ const Signup = () => {
       
 
       let res = await axios.post('http://localhost:4000/api/users',input)
-      navigate('/login')
+      if(res){
+        navigate('/login')
+      }
+      
       console.log(res);
 
       // console.log(input);
@@ -34,7 +37,7 @@ const Signup = () => {
       
 
       <span> FulltName </span>
-      <input value={input.fullName} name='fullName' type='text' placeholder="Enter your fullName" onChange={fun2} />
+      <input value={input.name} name='name' type='text' placeholder="Enter your fullName" onChange={fun2} />
       <br></br>
       <br></br>
 

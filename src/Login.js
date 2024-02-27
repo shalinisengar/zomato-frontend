@@ -1,58 +1,54 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, } from "react-router-dom"
 import axios from 'axios'
-import { Route, Routes,useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   let navigate = useNavigate()
-
-  let [input ,setinput] = useState({
-    email:"",
-    password:""
+  let [input, Setinput] = useState({
+    email: '',
+    passWord: ''
   })
-
-  const click = async(e)=>{
+  const fun3 = async (e) => {
     e.preventDefault();
-    let res = await axios.post('http://localhost:4000/api/login',input)
-    navigate('/home')
-    console.log(res);
+    try {
+      let res = await axios.post('http://localhost:4000/api/login', input)
+
+      localStorage.setItem('userData', JSON.stringify(res.data))
+      if (res) {
+        navigate('/')
+      }
+
+      
+    } catch (err) {
+      console.error(err, 'error');
+    }
+
   }
-  const changeinput = (e) => {
+  const fun2 = (e) => {
     let { name, value } = e.target
-   console.log( setinput({ ...input, [name]: value })); 
-    setinput({ ...input, [name]: value })
+    Setinput({ ...input, [name]: value })
   }
   return (
-    <div>
-     <div className='container'>
-    
-     <form class="form"> 
-       <h4 class="form-title">Sign in to your account</h4>
-        <div class="input-container">
-          <label>Email</label>
-          <input type="email" placeholder="Enter your email" name='email'value={input.email} onChange={changeinput}/>
-          <span>
-          </span>
-      </div>
-      <div class="input-container">
-        <label>Password</label>
-          <input type="password" placeholder="Enter your password" value={input.password} name='password' onChange={changeinput}/>
-        </div>
-         <button type="submit"  onClick={click} >
-        Sign in
-      </button>
-
-      <p class="signup-link">
-        No account?
-        <Link to='/'>SignUp</Link>
-      </p>
-   </form>
-
-     </div>
-      
-      
+    <div id='main'>
+      <fieldset>
+        <legend><h2>Login form</h2></legend>
 
 
+        <span>Email </span>
+        <input value={input.email} name='email' type='email' placeholder="Enter your Email" onChange={fun2} />
+        <br></br>
+        <br></br>
+
+        <span> Password</span>
+        <input value={input.passWord} name='passWord' type='password' placeholder="Enter your password" onChange={fun2} />
+        <br></br>
+        <br></br>
+
+        <button type='submit' onClick={fun3}>Submit</button>
+        <Link to='/sign'>SignUp</Link>
+
+      </fieldset>
     </div>
   )
 }
