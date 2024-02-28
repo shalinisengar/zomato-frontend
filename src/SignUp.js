@@ -12,11 +12,16 @@ const Signup = () => {
     email: '',
     passWord: ''
   })
+  const fun2 = (e) => {
+    let { name, value } = e.target
+    Setinput({ ...input, [name]: value })
+  }
   const fun3 = async(e) => {
       e.preventDefault();
       
 
       let res = await axios.post('http://localhost:4000/api/users',input)
+
       if(res){
         navigate('/login')
       }
@@ -26,10 +31,7 @@ const Signup = () => {
       // console.log(input);
       
   }
-  const fun2 = (e) => {
-    let { name, value } = e.target
-    Setinput({ ...input, [name]: value })
-  }
+  
   return (
     <div id='main'>
       <fieldset>

@@ -13,8 +13,8 @@ import { TbWorld } from "react-icons/tb";
 
 const Footer = () => {
   return (
-    <div style={{backgroundColor:'#ECEFF0'}}>
-      <div className="container w-75  ">
+    <div className="" style={{backgroundColor:'#ECEFF0' ,paddingTop:2,marginTop:20}}>
+      <div className="container w-75 mt-40 ">
         <div className="mt-5 d-flex justify-content-between align-item-center">
           <div>
             <img

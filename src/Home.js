@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {FaUserAlt}  from 'react-icons/fa';
 import {BiLogInCircle}  from 'react-icons/bi';
 import Logo from './Zomato-Logo.png'
 import Card from './Card';
 import City from './City';
 import Footer from './Footer';
-import img from './BackGround.png'
+import img from './BackGround.png';
 
-// import Login from './Login'
-// import SignUp from './SignUp'
 
 const Home = () => {
   const [data , setdata] = useState(null)
   useEffect(()=>{
-    let data1 = localStorage.getItem('userData',)
+    let data1 = localStorage.getItem('userData')
     console.log(data1,'dataa');
     let newData = JSON.parse(data1)
     console.log(newData);
@@ -29,62 +27,55 @@ const Home = () => {
   }
   return (
     <div>
-          <div className='parent'>
-        <img src={img}/>
-        <div className='Navbar'>
-            <div className='Navbar-left'>
-                <span className='text'><NavLink to='/view' className='text' > View food</NavLink></span>
-                <span className='text'><NavLink to='/addres' className='text'>Add restorent</NavLink></span>
+         <div className='parent'>
 
-            </div>
-            <div className='Navbar-right'>
-                             
+<img className='img' src={img} alt="logo" />   {/* background image */}
 
+<div className='icons-bg'>
+<div className='div1'>
+    <span className='floar-right1'> <NavLink   to='/view' className='color-b'>View Food</NavLink> </span> 
+    <span className='floar-right2'> <NavLink   to='/addr' className='color-b'>Add Restaurant</NavLink> </span> 
+</div>
+<div className='div2'> 
 {
-   data? (  <>   <p className='text' > {data.userData} </p>
-    <span  onClick={remove}   className='floar-right1'> <NavLink  className='text'>Logout<BiLogInCircle/> </NavLink> </span>  
 
-    </>
 
-   ):
+data? (  <>   <p>{data.userData.name}</p>
+<span  onClick={remove}   className='floar-right2'> <NavLink  className='color-b'>Logout<BiLogInCircle/> </NavLink> </span>  
 
-   (     <>   
-   <span  className='floar-right1'><Link to='/Login' className='text'>Login <BiLogInCircle/></Link> </span> 
-               <span  className='floar-right1'><Link to='/signup' className='text'><FaUserAlt /> SignUp</Link></span> </>)
+</>
 
-} 
 
-            
-               {/* <span  className='floar-right1'><Link to='/Login' className='text'>Login <BiLogInCircle/></Link> </span> 
-               <span  className='floar-right1'><Link to='/signup' className='text'><FaUserAlt /> SignUp</Link></span> */}
+):
 
-            </div>
+(     <>   
+<span className='floar-right1'>  <NavLink  to='/signup'  className='color-b'><FaUserAlt/> Sign-up</NavLink> </span> 
+<span className='floar-right2'> <NavLink  to='/login' className='color-b'>Login <BiLogInCircle/></NavLink>  </span>    </>  )
+}
 
-        </div>
-        <div className='zomato-logo'>
-          <img className='img'  src={Logo} alt='logo'/>
-          <br/>
-          {/* <h1 className='img'>zomato</h1> */}
-        </div>
-        <div className='input-search'>
-            <h3 style={{fontWeight:395}}>Discover the best foods & drinks in Chitkara</h3>
-            <br/>
-            <div className='inp'>
-              <select name='' id='select' ><img src=''/>
 
-                <option value="channai">Chennai</option>
-                <option value="bhopal">Bhopal</option>
-                <option value="delhi">Delhi</option>
-                <option value="mumbai">Mumbai</option>
-                <option selected value="gwalior">Gwalior</option>
-                <option value="ujjain">Ujjain</option>
-              </select>
-              
-              <input className='p-3 hm' type='text'  placeholder=' Search for a restaurant or a dish'/>
+</div>
+</div>
+      <div>
+      <div className='heading-zomato'>
+        <img src={Logo} alt="logo" />
+        </div> 
+      </div>
+      <div className='input-search'>
+      <h3 id='h3'>Discover the best food & drinks in Chitkara</h3>
+      <div className="input">
+    <select name="" id="">
+        <option value="Chennai">Chennai</option>
+        <option value="Jaipur">Jaipur</option>
+        <option selected value="Gwalior">Gwalior</option>
+        <option  value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Kolkata">Kolkata</option>
+    </select>
+    <input type="text" placeholder="Search for restaurant or a dish"/>
+    </div>
+      </div>
 
-            </div>
-
-        </div>
         <Card/>
         <section>
           <City/>

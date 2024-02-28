@@ -12,10 +12,11 @@ const Login = () => {
   const fun3 = async (e) => {
     e.preventDefault();
     try {
-      let res = await axios.post('http://localhost:4000/api/login', input)
+      const res = await axios.post('http://localhost:4000/api/login', input)
+      console.log(res,'rrrrr');
 
       localStorage.setItem('userData', JSON.stringify(res.data))
-      if (res) {
+      if (res.data) {
         navigate('/')
       }
 
@@ -46,7 +47,7 @@ const Login = () => {
         <br></br>
 
         <button type='submit' onClick={fun3}>Submit</button>
-        <Link to='/sign'>SignUp</Link>
+        <Link to='/signup'>SignUp</Link>
 
       </fieldset>
     </div>
