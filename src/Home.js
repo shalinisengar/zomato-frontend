@@ -34,7 +34,7 @@ const Home = () => {
 <div className='icons-bg'>
 <div className='div1'>
     <span className='floar-right1'> <NavLink   to='/view' className='color-b'>View Food</NavLink> </span> 
-    <span className='floar-right2'> <NavLink   to='/addr' className='color-b'>Add Restaurant</NavLink> </span> 
+    <span className='floar-right2'> <NavLink   to='/addres' className='color-b'>Add Restaurant</NavLink> </span> 
 </div>
 <div className='div2'> 
 {
